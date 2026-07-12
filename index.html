@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的旅行足迹地图</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="echarts.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🗺️ 我的旅行足迹地图</h1>
+    <p>点击省份可查看市级地图；在省内点击地区，即可标记或取消“去过”。</p>
+    <div class="stats">
+      <div class="stat"><b id="s-prov">0</b><span>去过的省级区域</span></div>
+      <div class="stat"><b id="s-sub">0</b><span>标记的市 / 地区</span></div>
+      <div class="stat"><b id="s-rate">0%</b><span>省级覆盖率</span></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="crumb" id="crumb"><b>全国</b></div>
+    <button id="btn-back" style="display:none">← 返回全国</button>
+    <button id="btn-markall" style="display:none">标记整省已到访</button>
+    <button id="btn-export">导出记录</button>
+    <button id="btn-import">导入记录</button>
+  </div>
+
+  <main class="wrap">
+    <div class="mapbox">
+      <div id="map"></div>
+      <div class="loading" id="loading">地图加载中…</div>
+    </div>
+    <aside class="side">
+      <div class="hint">💡 全国视图中点击省份进入下级地图；省内点击地区可切换“去过 / 未去”。颜色越深表示标记越多。</div>
+      <h3>已标记区域</h3>
+      <div id="visited-list"><span class="empty">还没有记录，去点亮第一个地方吧！</span></div>
+      <div class="msg" id="msg"></div>
+    </aside>
+  </main>
+
+  <div class="modal-bg" id="modal-bg">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title">导出记录</h3>
+      <p class="modal-help">复制以下文本可保存；导入时粘贴文本并点击“导入”。</p>
+      <textarea id="modal-text" aria-label="旅行记录数据"></textarea>
+      <div class="row">
+        <button id="modal-cancel">关闭</button>
+        <button class="primary" id="modal-ok" style="display:none">导入</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
