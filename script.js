@@ -68,10 +68,12 @@ function loadSaved() {
   try {
     const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
     const saved = Array.isArray(value)
-      ? value.filter(item => typeof item === 'string' && !OLD_EXCEL_PROVINCES.has(item))
+      ? value.filter(item => typeof item === 'string')
       : [];
     if (localStorage.getItem(EXCEL_IMPORT_KEY) !== '1') {
-      const merged = [...new Set([...saved, ...EXCEL_VISITED])];
+      // 只在首次迁移时清理一次旧的错误整省标记，之后不再删除
+      const cleaned = saved.filter(item => !OLD_EXCEL_PROVINCES.has(item));
+      const merged = [...new Set([...cleaned, ...EXCEL_VISITED])];
       localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
       localStorage.setItem(EXCEL_IMPORT_KEY, '1');
       return merged;
