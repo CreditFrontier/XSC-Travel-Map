@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+<!-- saved from url=(0114)file:///C:/Users/yezha/Desktop/%E6%88%91%E7%9A%84%E6%97%85%E8%A1%8C%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/index.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>我的旅行足迹地图</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="echarts.min.js"></script>
+  <link rel="stylesheet" href="./index_files/style.css">
+  <script src="./index_files/echarts.min.js"></script>
 </head>
 <body>
   <header>
     <h1>🗺️ 我的旅行足迹地图</h1>
     <p>点击省份可查看市级地图；在省内点击地区，即可标记或取消“去过”。</p>
     <div class="stats">
-      <div class="stat"><b id="s-prov">0</b><span>去过的省级区域</span></div>
-      <div class="stat"><b id="s-sub">0</b><span>标记的市 / 地区</span></div>
-      <div class="stat"><b id="s-rate">0%</b><span>省级覆盖率</span></div>
+      <div class="stat"><b id="s-prov">24</b><span>去过的省级区域</span></div>
+      <div class="stat"><b id="s-sub">90</b><span>标记的市 / 地区</span></div>
+      <div class="stat"><b id="s-rate">71%</b><span>省级覆盖率</span></div>
     </div>
   </header>
 
@@ -28,14 +28,14 @@
 
   <main class="wrap">
     <div class="mapbox">
-      <div id="map"></div>
-      <div class="loading" id="loading">地图加载中…</div>
+      <div id="map" _echarts_instance_="ec_1783950658013" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 503px; height: 380px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="1320" height="997" style="position: absolute; left: 0px; top: 0px; width: 503px; height: 380px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(327px, 134px, 0px); border-color: rgb(186, 234, 226); pointer-events: none; visibility: hidden; opacity: 0;">河北<br>✓ 已标记</div></div>
+      <div class="loading" id="loading" style="display: none;">地图加载中…</div>
     </div>
     <aside class="side">
       <div class="hint">💡 全国视图中点击省份进入下级地图；省内点击地区可切换“去过 / 未去”。颜色越深表示标记越多。</div>
       <h3>已标记区域</h3>
-      <div id="visited-list"><span class="empty">还没有记录，去点亮第一个地方吧！</span></div>
-      <div class="msg" id="msg"></div>
+      <div id="visited-list"><div class="visited-group"><b>上海</b><br><span class="tag">宝山区<i title="删除" tabindex="0">×</i></span><span class="tag">虹口区<i title="删除" tabindex="0">×</i></span><span class="tag">黄浦区<i title="删除" tabindex="0">×</i></span><span class="tag">嘉定区<i title="删除" tabindex="0">×</i></span><span class="tag">静安区<i title="删除" tabindex="0">×</i></span><span class="tag">闵行区<i title="删除" tabindex="0">×</i></span><span class="tag">浦东新区<i title="删除" tabindex="0">×</i></span><span class="tag">普陀区<i title="删除" tabindex="0">×</i></span><span class="tag">青浦区<i title="删除" tabindex="0">×</i></span><span class="tag">松江区<i title="删除" tabindex="0">×</i></span><span class="tag">徐汇区<i title="删除" tabindex="0">×</i></span><span class="tag">长宁区<i title="删除" tabindex="0">×</i></span><span class="tag">崇明区<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>北京</b><br><span class="tag">海淀区<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>四川</b><br><span class="tag">阿坝藏族羌族自治州<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>宁夏</b><br><span class="tag">银川市<i title="删除" tabindex="0">×</i></span><span class="tag">吴忠市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>安徽</b><br><span class="tag">黄山市<i title="删除" tabindex="0">×</i></span><span class="tag">芜湖市<i title="删除" tabindex="0">×</i></span><span class="tag">铜陵市<i title="删除" tabindex="0">×</i></span><span class="tag">合肥市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>山东</b><br><span class="tag">枣庄市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>山西</b><br><span class="tag">大同市<i title="删除" tabindex="0">×</i></span><span class="tag">朔州市<i title="删除" tabindex="0">×</i></span><span class="tag">晋中市<i title="删除" tabindex="0">×</i></span><span class="tag">临汾市<i title="删除" tabindex="0">×</i></span><span class="tag">太原市<i title="删除" tabindex="0">×</i></span><span class="tag">忻州市<i title="删除" tabindex="0">×</i></span><span class="tag">运城市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>广东</b><br><span class="tag">广州市<i title="删除" tabindex="0">×</i></span><span class="tag">珠海市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>广西</b><br><span class="tag">北海市<i title="删除" tabindex="0">×</i></span><span class="tag">崇左市<i title="删除" tabindex="0">×</i></span><span class="tag">桂林市<i title="删除" tabindex="0">×</i></span><span class="tag">柳州市<i title="删除" tabindex="0">×</i></span><span class="tag">南宁市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>新疆</b><br><span class="tag">喀什地区<i title="删除" tabindex="0">×</i></span><span class="tag">乌鲁木齐市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>江苏</b><br><span class="tag">镇江市<i title="删除" tabindex="0">×</i></span><span class="tag">苏州市<i title="删除" tabindex="0">×</i></span><span class="tag">盐城市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>江西</b><br><span class="tag">上饶市<i title="删除" tabindex="0">×</i></span><span class="tag">南昌市<i title="删除" tabindex="0">×</i></span><span class="tag">九江市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>河北</b><br><span class="tag">邯郸市<i title="删除" tabindex="0">×</i></span><span class="tag">邢台市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>河南</b><br><span class="tag">焦作市<i title="删除" tabindex="0">×</i></span><span class="tag">洛阳市<i title="删除" tabindex="0">×</i></span><span class="tag">三门峡市<i title="删除" tabindex="0">×</i></span><span class="tag">新乡市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>浙江</b><br><span class="tag">杭州市<i title="删除" tabindex="0">×</i></span><span class="tag">湖州市<i title="删除" tabindex="0">×</i></span><span class="tag">金华市<i title="删除" tabindex="0">×</i></span><span class="tag">宁波市<i title="删除" tabindex="0">×</i></span><span class="tag">衢州市<i title="删除" tabindex="0">×</i></span><span class="tag">绍兴市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>海南</b><br><span class="tag">三亚市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>湖北</b><br><span class="tag">恩施土家族苗族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">神农架林区<i title="删除" tabindex="0">×</i></span><span class="tag">十堰市<i title="删除" tabindex="0">×</i></span><span class="tag">武汉市<i title="删除" tabindex="0">×</i></span><span class="tag">宜昌市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>湖南</b><br><span class="tag">衡阳市<i title="删除" tabindex="0">×</i></span><span class="tag">湘潭市<i title="删除" tabindex="0">×</i></span><span class="tag">岳阳市<i title="删除" tabindex="0">×</i></span><span class="tag">长沙市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>甘肃</b><br><span class="tag">白银市<i title="删除" tabindex="0">×</i></span><span class="tag">甘南藏族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">嘉峪关市<i title="删除" tabindex="0">×</i></span><span class="tag">酒泉市<i title="删除" tabindex="0">×</i></span><span class="tag">兰州市<i title="删除" tabindex="0">×</i></span><span class="tag">临夏回族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">陇南市<i title="删除" tabindex="0">×</i></span><span class="tag">天水市<i title="删除" tabindex="0">×</i></span><span class="tag">张掖市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>西藏</b><br><span class="tag">拉萨市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>贵州</b><br><span class="tag">安顺市<i title="删除" tabindex="0">×</i></span><span class="tag">贵阳市<i title="删除" tabindex="0">×</i></span><span class="tag">六盘水市<i title="删除" tabindex="0">×</i></span><span class="tag">黔东南苗族侗族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">黔南布依族苗族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">铜仁市<i title="删除" tabindex="0">×</i></span><span class="tag">遵义市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>重庆</b><br><span class="tag">大足区<i title="删除" tabindex="0">×</i></span><span class="tag">武隆区<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>陕西</b><br><span class="tag">延安市<i title="删除" tabindex="0">×</i></span><span class="tag">榆林市<i title="删除" tabindex="0">×</i></span></div><div class="visited-group"><b>青海</b><br><span class="tag">海北藏族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">海南藏族自治州<i title="删除" tabindex="0">×</i></span><span class="tag">西宁市<i title="删除" tabindex="0">×</i></span></div></div>
+      <div class="msg" id="msg" style="display: none;"></div>
     </aside>
   </main>
 
@@ -51,6 +51,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <script src="./index_files/script.js"></script>
+
+
+</body></html>
